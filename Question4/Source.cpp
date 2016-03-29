@@ -40,13 +40,19 @@ public:
 	};
 	//3.2
 
-	Fraction add(int,Fraction){
+	Fraction add(int p,Fraction fun){
 		Fraction frac;
+		frac.num = fun.num + fun.denom*p;
+		frac.denom = fun.denom*1;
 		return frac;
 	}
-	Fraction add(Fraction, int){
 
-	}
+	Fraction add(Fraction fun, int p){
+			Fraction frac;
+			frac.num = fun.num + fun.denom*p;
+			frac.denom = fun.denom * 1;
+			return frac;
+		}
 };
 
 Fraction operator>(const Fraction&p,const Fraction& t){
@@ -64,7 +70,8 @@ Fraction operator>(const Fraction&p,const Fraction& t){
 int main(){
 	Fraction fact1, fract2;
 	Fraction obj;
-
+	
+	int in;
 
 	cout << "" << endl;
 	cin >> fact1.num;
@@ -74,13 +81,24 @@ int main(){
 
 	cout << "The greater faction is:" << endl;
 
-	if(fact1 > fact1)
+	/*if(fact1 > fact1)
 	{
 		cout << fact1.num << "/" << fact1.denom << endl;
 	}
 	else{
 		cout << fract2.num << "/" << fract2.denom << endl;
-	}
+	}*/
 
 
+	cout << "Addintion :" << endl;
+	cin >> fact1.num;
+	cin >> fact1.denom;
+
+	cout << "Integer to add to fraction:" << endl;
+	cin >> in;
+
+	cout << "Result Add 1: " << obj.add(in, fact1).num << "/"<< obj.add(in, fact1).denom << endl;
+	cout << "Result Add 2: " << obj.add(fact1, in).num << "/" << obj.add(fact1,in ).denom << endl;
+
+	return 0;
 }
