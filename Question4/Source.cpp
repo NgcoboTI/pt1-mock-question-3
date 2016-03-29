@@ -32,14 +32,14 @@ public:
 	~Fraction(){
 	}
 
-	friend  Fraction operator>(Fraction&p, Fraction& t);
+	friend  Fraction operator>(Fraction &p, Fraction &t);
 
 	void print()
 	{ 
 		cout << num << "/" << denom;
 	};
-	//3.2
-
+	
+	//3.2 Add overload methods
 	Fraction add(int p,Fraction fun){
 		Fraction frac;
 		frac.num = fun.num + fun.denom*p;
@@ -80,8 +80,8 @@ int main(){
 	cin >> fract2.denom;
 
 	cout << "The greater faction is:" << endl;
-
-	/*if(fact1 > fact1)
+	
+	/*if(fact1 > fract2)
 	{
 		cout << fact1.num << "/" << fact1.denom << endl;
 	}
