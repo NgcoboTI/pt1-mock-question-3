@@ -32,7 +32,7 @@ public:
 	~Fraction(){
 	}
 
-	friend  Fraction operator>(Fraction &p, Fraction &t);
+	friend  bool operator>(Fraction p, Fraction t);
 
 	void print()
 	{ 
@@ -55,14 +55,13 @@ public:
 		}
 };
 
-Fraction operator>(const Fraction&p,const Fraction& t){
+bool operator>( Fraction p,const Fraction t){
 	
-
 	if (p.num / p.denom > t.num / t.denom){
-		return p;
+		return true;
 	}
 	else{
-		return t;
+		return false;
 	}
 
 }
@@ -81,13 +80,13 @@ int main(){
 
 	cout << "The greater faction is:" << endl;
 	
-	/*if(fact1 > fract2)
+	if ((fact1> fract2))
 	{
 		cout << fact1.num << "/" << fact1.denom << endl;
 	}
 	else{
 		cout << fract2.num << "/" << fract2.denom << endl;
-	}*/
+	}
 
 
 	cout << "Addintion :" << endl;
